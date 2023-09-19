@@ -1,2 +1,5 @@
 ﻿  CDI_SistemaOperatius_23_24.cpp
+C:\Users\DANIELMARTINEZLIU\Documents\GitHub\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24.cpp(84,46): warning C4307: '*': signed integral constant overflow
+C:\Users\DANIELMARTINEZLIU\Documents\GitHub\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24.cpp(86,8): warning C4244: 'argument': conversion from 'unsigned __int64' to 'int', possible loss of data
+LINK : warning LNK4076: invalid incremental status file 'x64\Debug\CDI_SistemaOperatius_23_24.ilk' (which will be deleted); linking nonincrementally
   CDI_SistemaOperatius_23_24.vcxproj -> C:\Users\DANIELMARTINEZLIU\Documents\GitHub\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\x64\Debug\CDI_SistemaOperatius_23_24.exe
