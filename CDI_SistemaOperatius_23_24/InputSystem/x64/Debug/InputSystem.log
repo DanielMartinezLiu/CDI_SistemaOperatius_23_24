@@ -1,0 +1,8 @@
+﻿  ConsoleControl.cpp
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\ConsoleControl.h(57,2): warning C4091: 'static ': se ha omitido a la izquierda de 'ConsoleControl' cuando no hay ninguna variable declarada
+  InputManager.cpp
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\ConsoleControl.h(57,2): warning C4091: 'static ': se ha omitido a la izquierda de 'ConsoleControl' cuando no hay ninguna variable declarada
+  main.cpp
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\ConsoleControl.h(57,2): warning C4091: 'static ': se ha omitido a la izquierda de 'ConsoleControl' cuando no hay ninguna variable declarada
+  Generando código...
+  InputSystem.vcxproj -> C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\x64\Debug\InputSystem.exe
