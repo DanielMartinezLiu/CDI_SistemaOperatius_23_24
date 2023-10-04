@@ -81,7 +81,7 @@ void Count(int maxCounter)
 
 void Example01()
 {
-	unsigned long long totalCount = 1000 * 1000 * 10000000;
+	unsigned long long totalCount = 1000 * 1000 * 1000;
 
 	Count(totalCount);
 }
