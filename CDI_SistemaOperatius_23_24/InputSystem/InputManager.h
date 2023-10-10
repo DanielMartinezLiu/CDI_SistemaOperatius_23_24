@@ -16,9 +16,10 @@ class InputManager
         // No poner punteros en las funciones lamda, porque retienen memoria, y al usarla como punteros al pasarla a un sitio a otro para no ocasionar problemas.
         OnKeyPress onKeyPress; // Guardar la funcion lamda 
 
-        KeyBinding(int keyCode, OnKeyPress onKeyPress);
+        KeyBinding(int keyCode, unsigned long milisecondsTriggerDelay, OnKeyPress onKeyPress);
         ~KeyBinding();
         unsigned int GetSubscriptionId();
+        void TryTrigger();
 
     private:
         unsigned int _subscriptionId = 0;
@@ -42,7 +43,11 @@ public:
 
     void StartListener();
     void StopListener();
+    
+    void SaveListener(KeyBinding* keyBinding);
 
-    unsigned int AddListener(int keyCode, KeyBinding::OnKeyPress onKeyPress);
+    unsigned int AddListener(int keyCode, unsigned long milisecondsTriggerDelay, KeyBinding::OnKeyPress onKeyPress);
+    unsigned int AddListenerAsync(int keyCode, unsigned long milisecondsTriggerDelay, KeyBinding::OnKeyPress onKeyPress);
     void RemoveListener(unsigned int listenerId);
+    void RemoveListenerAsync(unsigned int listenerId);
 };

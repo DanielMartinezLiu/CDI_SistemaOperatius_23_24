@@ -1,8 +1,15 @@
-﻿  ConsoleControl.cpp
+﻿  InputManager.cpp
 C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\ConsoleControl.h(57,2): warning C4091: 'static ': se ha omitido a la izquierda de 'ConsoleControl' cuando no hay ninguna variable declarada
-  InputManager.cpp
-C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\ConsoleControl.h(57,2): warning C4091: 'static ': se ha omitido a la izquierda de 'ConsoleControl' cuando no hay ninguna variable declarada
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.cpp(71,1): error C2511: 'void InputManager::RemoveListener(InputManager::KeyBinding *)': la función miembro sobrecargada no se ha encontrado en 'InputManager'
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.h(8): message : vea la declaración de 'InputManager'
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.cpp(74,60): error C2065: 'keyCode': identificador no declarado
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.cpp(80,32): error C2065: 'keyCode': identificador no declarado
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.cpp(93,1): error C2511: 'unsigned int InputManager::AddListener(int,unsigned long,InputManager::KeyBinding::OnKeyPress)': la función miembro sobrecargada no se ha encontrado en 'InputManager'
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.h(8): message : vea la declaración de 'InputManager'
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.cpp(118,28): error C2039: "AddListenerAsync": no es un miembro de "InputManager"
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.h(8): message : vea la declaración de 'InputManager'
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.cpp(118,96): error C2653: 'KeyBinding': no es un nombre de clase o espacio de nombres
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\InputManager.cpp(118,108): error C2061: error de sintaxis: identificador 'OnKeyPress'
   main.cpp
 C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\InputSystem\ConsoleControl.h(57,2): warning C4091: 'static ': se ha omitido a la izquierda de 'ConsoleControl' cuando no hay ninguna variable declarada
   Generando código...
-  InputSystem.vcxproj -> C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\x64\Debug\InputSystem.exe

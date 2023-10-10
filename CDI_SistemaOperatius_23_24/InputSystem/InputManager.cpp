@@ -41,6 +41,7 @@ void InputManager::ReadLoop()
         int keyCode = ConsoleControl::WaitForReadNextKey();
 
         _listenersMapMutex->lock();
+
         KeyBindingMapList::iterator pair = _listenersMap->find(keyCode);
         if (pair != _listenersMap->end())
         {
@@ -48,7 +49,7 @@ void InputManager::ReadLoop()
             
             for (KeyBinding* keyBinding : *keyBindings)
             {
-                keyBinding->onKeyPress(keyCode);
+                keyBinding->TryTrigger();
             }
         }
 
@@ -67,29 +68,45 @@ void InputManager::StopListener()
     _isStartedMutex->unlock();
 }
 
-unsigned int InputManager::AddListener(int keyCode, KeyBinding::OnKeyPress onKeyPress)
+void InputManager::SaveListener(KeyBinding* keyBinding)
 {
-    KeyBinding* binding = new KeyBinding(keyCode, onKeyPress);
-
     _listenersMapMutex->lock();
 
-    KeyBindingMapList::iterator pair = _listenersMap->find(keyCode);
+    KeyBindingMapList::iterator pair = _listenersMap->find(keyBinding->keyCode);
     std::list<KeyBinding*>* keyBindings = nullptr;
 
     if (pair == _listenersMap->end())
     {
         keyBindings = new std::list<KeyBinding*>();
-        _listenersMap->emplace(keyCode, keyBindings);
+        _listenersMap->emplace(keyBinding->keyCode, keyBindings);
     }
-    else 
+    else
     {
         keyBindings = pair->second;
     }
 
-    keyBindings->push_back(binding);
+    keyBindings->push_back(keyBinding);
 
     _listenersMapMutex->unlock();
+}
+
+unsigned int InputManager::AddListener(int keyCode, unsigned long milisecondsTriggerDelay,KeyBinding::OnKeyPress onKeyPress)
+{
+    KeyBinding* keyBinding = new KeyBinding(keyCode, milisecondsTriggerDelay, onKeyPress);
+
+    SaveListener(keyBinding);
     
+    return keyBinding->GetSubscriptionId();
+}
+
+unsigned int InputManager::AddListenerAsync(int keyCode, unsigned long milisecondsTriggerDelay,KeyBinding::OnKeyPress onKeyPress)
+{
+    KeyBinding* binding = new KeyBinding(keyCode, milisecondsTriggerDelay, onKeyPress);
+
+    std::thread* safeListenerThread = new std::thread(&InputManager::SaveListener, this, binding);
+
+    safeListenerThread->detach();
+
     return binding->GetSubscriptionId();
 }
 
@@ -99,7 +116,6 @@ void InputManager::RemoveListener(unsigned int subscriptionId)
 
     for (std::pair<int, std::list<KeyBinding*>*> pair : *_listenersMap) 
     {
-        // Se hace asi en vez de llamarlo directamente para no sobrecargar el for con la funcion ".count", en este caso "pair.second"
         std::list<KeyBinding*>* keyBindings = pair.second;
         for (KeyBinding* binding : *keyBindings)
         {
@@ -107,6 +123,7 @@ void InputManager::RemoveListener(unsigned int subscriptionId)
             {
                 keyBindings->remove(binding);
                 _listenersMapMutex->unlock();
+                delete(binding);
                 return;
             }
         }
@@ -115,7 +132,15 @@ void InputManager::RemoveListener(unsigned int subscriptionId)
     _listenersMapMutex->unlock();
 }
 
-InputManager::KeyBinding::KeyBinding(int keyCode, OnKeyPress onKeyPress)
+void InputManager::RemoveListenerAsync(unsigned int subscriptionId)
+{
+    std::thread* safeListenerThread = new std::thread(&InputManager::RemoveListener, this, subscriptionId);
+
+    safeListenerThread->detach();
+}
+
+
+InputManager::KeyBinding::KeyBinding(int keyCode, unsigned long milisecondsTriggerDelay, OnKeyPress onKeyPress)
 {
     static std::mutex currentIdMutex;
     currentIdMutex.lock();
