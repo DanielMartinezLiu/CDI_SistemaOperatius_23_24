@@ -19,7 +19,6 @@ class InputManager
         KeyBinding(int keyCode, unsigned long milisecondsTriggerDelay, OnKeyPress onKeyPress);
         ~KeyBinding();
         unsigned int GetSubscriptionId();
-        void TryTrigger();
 
     private:
         unsigned int _subscriptionId = 0;

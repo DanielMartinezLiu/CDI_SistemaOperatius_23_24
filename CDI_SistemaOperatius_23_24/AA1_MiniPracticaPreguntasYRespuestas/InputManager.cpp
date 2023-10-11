@@ -49,7 +49,7 @@ void InputManager::ReadLoop()
             
             for (KeyBinding* keyBinding : *keyBindings)
             {
-                keyBinding->TryTrigger();
+                keyBinding->onKeyPress(keyCode);
             }
         }
 
