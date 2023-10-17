@@ -1,0 +1,7 @@
+﻿  Node.cpp
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\NodeMap\ConsoleControl.h(57,2): warning C4091: 'static ': se ha omitido a la izquierda de 'ConsoleControl' cuando no hay ninguna variable declarada
+  NodeMap.cpp
+C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\NodeMap\NodeMap.cpp(37,8): warning C4101: 'tree2': variable local sin referencia
+  Vector2.cpp
+  Generando código...
+  NodeMap.vcxproj -> C:\Git\CDI_SistemaOperatius_23_24\CDI_SistemaOperatius_23_24\x64\Debug\NodeMap.exe
