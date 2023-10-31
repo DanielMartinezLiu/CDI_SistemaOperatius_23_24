@@ -1,0 +1,26 @@
+{
+	"Character" : 
+	{
+		"coin" : 0,
+		"life" : 10,
+		"name" : "Aaron Deza",
+		"weapons" : 
+		[
+			{
+				"color" : "Plateada",
+				"damage" : 2,
+				"range" : 1
+			},
+			{
+				"damage" : 2,
+				"range" : 2,
+				"woodType" : "Roble"
+			},
+			{
+				"damage" : 2,
+				"range" : 2,
+				"woodType" : "Pino"
+			}
+		]
+	}
+}

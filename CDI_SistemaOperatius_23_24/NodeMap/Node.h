@@ -13,6 +13,8 @@ private:
 public:
 	Node(Vector2 position);
 	
+	Vector2 GetPosition();
+
 	INodeContent* GetContent();
 
 	/// Template tiene que estar declarada en el .h, porque no estamos declarando una funcion,

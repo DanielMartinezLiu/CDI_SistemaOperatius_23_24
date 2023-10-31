@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AA1_MiniPracticaPreguntasYR
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NodeMap", "NodeMap\NodeMap.vcxproj", "{A7368506-792A-4AD1-973C-0AB6ECF77B01}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JSONclass", "JSONclass\JSONclass.vcxproj", "{16C42A03-4CEF-416E-8CDB-191EEB40770B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{A7368506-792A-4AD1-973C-0AB6ECF77B01}.Release|x64.Build.0 = Release|x64
 		{A7368506-792A-4AD1-973C-0AB6ECF77B01}.Release|x86.ActiveCfg = Release|Win32
 		{A7368506-792A-4AD1-973C-0AB6ECF77B01}.Release|x86.Build.0 = Release|Win32
+		{16C42A03-4CEF-416E-8CDB-191EEB40770B}.Debug|x64.ActiveCfg = Debug|x64
+		{16C42A03-4CEF-416E-8CDB-191EEB40770B}.Debug|x64.Build.0 = Debug|x64
+		{16C42A03-4CEF-416E-8CDB-191EEB40770B}.Debug|x86.ActiveCfg = Debug|Win32
+		{16C42A03-4CEF-416E-8CDB-191EEB40770B}.Debug|x86.Build.0 = Debug|Win32
+		{16C42A03-4CEF-416E-8CDB-191EEB40770B}.Release|x64.ActiveCfg = Release|x64
+		{16C42A03-4CEF-416E-8CDB-191EEB40770B}.Release|x64.Build.0 = Release|x64
+		{16C42A03-4CEF-416E-8CDB-191EEB40770B}.Release|x86.ActiveCfg = Release|Win32
+		{16C42A03-4CEF-416E-8CDB-191EEB40770B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
